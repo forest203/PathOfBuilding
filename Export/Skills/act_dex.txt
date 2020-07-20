@@ -466,7 +466,7 @@ local skills, mod, flag, skill = ...
 			area = true,
 		},
 		{
-			name = "Explosion (20 fuses)",
+			name = "Explosion (21 fuses)",
 			area = true
 		},
 		{
