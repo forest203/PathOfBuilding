@@ -478,18 +478,18 @@ local skills, mod, flag, skill = ...
 			area = false,
 		},
 	},
-		preDamageFunc = function(activeSkill, output)
-			if activeSkill.skillPart == 2 then
-				activeSkill.skillData.dpsMultiplier = output.ProjectileCount
-			end
-		end,
+	preDamageFunc = function(activeSkill, output)
+		if activeSkill.skillPart == 5 then
+			activeSkill.skillData.dpsMultiplier = output.ProjectileCount
+		end
+	end,
 			
 	statMap = {
 		["explosive_arrow_explosion_minimum_added_fire_damage"] = {
-			mod("FireMin", "BASE", nil, 0, 0, { type = "SkillPart", skillPartList = { 1, 2, 3, 4 } }),
+			mod("FireMin", "BASE", nil, 0, 0, { type = "SkillPart", skillPartList = { 1, 2, 3, 4, 5 } }),
 		},
 		["explosive_arrow_explosion_maximum_added_fire_damage"] = {
-			mod("FireMax", "BASE", nil, 0, 0, { type = "SkillPart", skillPartList = { 1, 2, 3, 4 } }),
+			mod("FireMax", "BASE", nil, 0, 0, { type = "SkillPart", skillPartList = { 1, 2, 3, 4, 5 } }),
 		},
 		["fuse_arrow_explosion_radius_+_per_fuse_arrow_orb"] = {
 			skill("radiusExtra", nil, { type = "Multiplier", var = "ExplosiveArrowFuse" }),
@@ -500,13 +500,13 @@ local skills, mod, flag, skill = ...
 		
 	},
 #baseMod skill("radius", 15)
-#baseMod skill("showAverage", true, { type = "SkillPart", skillPartList = { 2, 3, 4} })
-#baseMod mod("Damage", "MORE", 100, 0, 0, { type = "SkillPart", skillPartList = { 1, 2, 3, 4 } }, { type = "Multiplier", var = "ExplosiveArrowFuse", base = -100 })
+#baseMod skill("showAverage", true, { type = "SkillPart", skillPartList = { 2, 3, 4, 5} })
+#baseMod mod("Damage", "MORE", 100, 0, 0, { type = "SkillPart", skillPartList = { 1, 2, 3, 4, 5 } }, { type = "Multiplier", var = "ExplosiveArrowFuse", base = -100 })
 #baseMod mod("Multiplier:ExplosiveArrowFuse", "BASE", 1, 0, 0, { type = "SkillPart", skillPart = 1 })
 #baseMod mod("Multiplier:ExplosiveArrowFuse", "BASE", 5, 0, 0, { type = "SkillPart", skillPart = 2 })
 #baseMod mod("Multiplier:ExplosiveArrowFuse", "BASE", 15, 0, 0, { type = "SkillPart", skillPart = 3 })
 #baseMod mod("Multiplier:ExplosiveArrowFuse", "BASE", 20, 0, 0, { type = "SkillPart", skillPart = 4 })
-
+#baseMod mod("Multiplier:ExplosiveArrowFuse", "BASE", 20, 0, 0, { type = "SkillPart", skillPart = 5 })
 #mods
 
 #skill ShrapnelTrap
